@@ -1,0 +1,4623 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* body{
+    overflow: hidden !important;
+} */
+
+/* ----------------------------------------------------------------- Fonts CDN Links ----------------------------------------------------------------------*/
+@font-face {
+    font-family: myFirstFont;
+    src: url(./Mogila\ Display\ Regular.otf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@400;500;600;700&family=Philosopher:ital,wght@0,700;1,400&display=swap&family=Open+Sans:wght@400;500;600;700;800&");
+
+:root {
+    --btn-bg: #863c21;
+    --text-white: #fff;
+    --text-dark: #000;
+    --text-lightDark: #00000042;
+    --category-color: #541919;
+    --light-text: #3b3b3b;
+}
+
+
+/* @media (min-width:1600px){ */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+}
+
+.container-c {
+    max-width: 1170px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--btn-bg);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--btn-bg);
+}
+
+.body-overlay-wrap {
+    position: relative;
+}
+
+.body-overlay {
+    height: 100%;
+    width: 100%;
+    background-color: var(--text-lightDark);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    /* backdrop-filter: blur(2px); */
+    transition: all ease 0.5s;
+}
+
+.head-sec {
+    background-color: #fcebd5;
+    padding: 0 9px;
+    position: relative;
+}
+
+.search-side {
+    position: relative;
+}
+
+.search-side input {
+    width: 100%;
+    height: 40px;
+    border-radius: 33px;
+    padding: 0px 60px;
+    border: none;
+    box-shadow: 1px 18px 21px -6px rgba(0, 0, 0, 0.22);
+    -webkit-box-shadow: 1px 18px 21px -6px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 1px 18px 21px -6px rgba(0, 0, 0, 0.22);
+}
+
+.search-side input:focus {
+    outline: none;
+}
+
+.search-side i {
+    position: absolute;
+    top: 15px;
+    left: 30px;
+}
+
+.btn-side {
+    justify-content: space-between;
+}
+
+.cross-button {
+    border: 0;
+    top: -38px;
+    position: absolute;
+    right: 35%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+}
+
+.btn-side a,
+button.btn {
+    background-color: var(--btn-bg);
+    border-radius: 34px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    border: 3px solid transparent;
+    justify-content: center;
+    transition: 0.6s;
+}
+
+.btn-side a:hover,
+button.btn:hover {
+    border: 3px solid var(--btn-bg);
+    color: var(--btn-bg);
+    background-color: transparent;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.book .img-fluid {
+    width: 86%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu ul {
+    list-style: none;
+    align-items: center;
+    display: flex;
+    gap: 3rem;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu ul li {
+    display: flex;
+    justify-content: center;
+}
+
+.menu ul li a {
+    display: inline-block;
+    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: var(--text-dark);
+    padding: 13px 0;
+    position: relative;
+    transition: 0.4s ease;
+}
+
+/* .menu ul li .btn{
+
+    } */
+.nav-btn {
+    background: var(--btn-bg);
+    color: var(--text-white);
+    padding: 5px 50px;
+    font-size: 16px;
+    display: flex;
+    margin-left: 3px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 34px;
+    border: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.cross-button:hover {
+    background: var(--btn-bg);
+    color: var(--text-white);
+    padding: 5px 0px;
+    font-size: 14px;
+    display: flex;
+    margin-left: 3px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 34px;
+    border: 3px solid transparent;
+    transition: 0.3s;
+}
+
+.cross-button {
+    background: var(--text-white);
+    color: var(--btn-bg);
+    padding: 5px 0px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    margin-left: 3px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 34px;
+    border: 3px solid var(--btn-bg) !important;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    color: var(--btn-bg);
+    border-color: var(--btn-bg);
+    background-color: transparent;
+}
+
+.logo img {
+    max-width: 157px;
+    height: auto;
+}
+
+/* .menu ul li:not(:last-child) a{
+        margin: 20% 0;
+    } */
+.menu ul li a:hover {
+    color: var(--btn-bg);
+}
+
+.menu input {
+    display: none;
+}
+
+/* .nav-item .nav-link {
+        color: #000000;
+        font-size: 25px;
+    }
+
+    .nav-item.nav-link:hover ::before{
+        width: 3%;
+        border: 2px solid #a52a2adb;
+    }
+    .nav-item {
+        margin: 0 2.720rem 0 2.720rem;
+    }
+    .nav-item .btn{
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: var(--text-white)fff;
+        background: #a52a2adb;
+        padding: 0px;
+        border-radius: 33px;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+    } */
+
+.banner {
+    background-image: url(./images/blank-bg-full.png);
+    background-position: right bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 150px 0;
+}
+
+.artboard-banner-pray {
+    background-image: url(./images/Home\ page.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 150px 0;
+}
+
+/* .pray-top-book {
+    width: 100px;
+    position: absolute;
+    top: -169px;
+    right: 120px;
+} */
+.banner-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* my css start */
+.center-frame {
+    border: 10px solid #7D5834;
+    padding-top: 20px;
+    position: relative;
+    left: 48px;
+    top: -70px;
+}
+
+/* my css end */
+.text-area {
+    display: flex;
+    flex-direction: column;
+    width: 339px;
+    height: 280px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 44px;
+    position: relative;
+    position: relative;
+    background-image: url(./images/frame.png);
+    background-size: 20rem 16rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0px;
+    left: -5px;
+}
+
+.text-area h3 {
+    color: var(--text-white);
+    text-align: center;
+    font-family: "Philosopher", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18.24px;
+    margin-top: 1rem;
+}
+
+.text-area p {
+    color: var(--text-white);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    margin: 0;
+    padding: 0 50px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.text-area h5 {
+    color: var(--text-white);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    border-bottom: 1px solid var(--text-white)fff;
+}
+
+.text-area .btn {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    background: var(--btn-bg);
+    font-size: 13px;
+    width: 50%;
+    border-radius: 33px;
+    font-style: normal;
+    font-weight: 400;
+    border: 3px solid transparent;
+}
+
+.text-area .btn:hover {
+    background-color: white;
+    color: var(--btn-bg);
+    border: 3px solid var(--btn-bg);
+}
+
+.text-area1 {
+    display: flex;
+    flex-direction: column;
+    width: 339px;
+    height: 280px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 44px;
+    position: relative;
+    position: relative;
+    background-image: url(./images/frame.png);
+    background-size: 20rem 16rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0px;
+    left: -5px;
+}
+
+.text-area1 h3 {
+    color: var(--text-white);
+    text-align: center;
+    font-family: "Philosopher", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18.24px;
+}
+
+.new-class {
+    right: 30px !important;
+}
+
+.text-area1 p {
+    color: var(--text-white);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 9px;
+    margin: 0;
+    padding: 0 50px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.text-area1 h5 {
+    color: var(--text-white);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    border-bottom: 1px solid var(--text-white)fff;
+}
+
+.text-area1 .btn {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    background: rgb(0, 0, 0);
+    font-size: 13px;
+    width: 30%;
+    border-radius: 33px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.frame-bottom {
+    filter: invert(1);
+    margin-top: 10px;
+    width: 50%;
+    height: auto;
+}
+
+.book-area .top-book {
+    position: absolute;
+    top: -130px;
+    right: 10px;
+}
+
+/* .old-top-book {
+    position: absolute;
+    top: -115px;
+    width: 92px;
+    right: 165px;
+} */
+/* .penta-top-book {
+    top: -161px;
+    position: absolute;
+    right: 110px;
+    width: 90px;
+} */
+
+/* .former-top-book {
+    top: -135px;
+    position: absolute;
+    right: 110px;
+    width: 90px;
+} */
+/* .ani-former-top-book {
+    position: absolute;
+    top: -200px;
+    right: 110px;
+    width: 90px;
+} */
+/* .minor-top-book {
+    top: -120px;
+    position: absolute;
+    right: 110px;
+    width: 90px;
+} */
+/* .ani-minor-top-book {
+    position: absolute;
+    top: -131px;
+    right: 110px;
+    width: 90px;
+} */
+.book-stand {
+    margin: 0 auto;
+    width: 351px;
+    height: 194px;
+}
+
+.books {
+    display: flex;
+    margin: 0 auto;
+    width: 70%;
+    position: relative;
+    top: 17px;
+    z-index: 3;
+    justify-content: center;
+}
+
+.book {
+    z-index: 9;
+    margin-left: -26px;
+    transition: 0.6s;
+}
+
+.book:hover {
+    transform: scale(1.3) translateX(-20%);
+    z-index: 11;
+}
+
+.lights {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+}
+
+/* .lights-new {
+
+    width: 67%;
+
+} */
+.lights-main {
+    width: 80%;
+    height: 63px;
+    position: absolute;
+    left: 20px;
+}
+
+.stand {
+    width: 100%;
+    position: relative;
+}
+
+.lights-1,
+.lights-2,
+.lights-3 {
+    filter: brightness(0) invert(1);
+    width: 61px;
+    position: relative;
+}
+
+.book-area {
+    top: 76px;
+}
+
+.foot-sec {
+    background-color: #fcebd5;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 50px;
+    align-items: center;
+}
+
+.footer-content p {
+    font-family: "Montessrat", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin: 0;
+    color: var(--category-color);
+}
+
+.icon-wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.icon-1 i {
+    font-size: 10px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--category-color);
+    color: var(--category-color);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.icon-1 a {
+    text-decoration: none;
+}
+
+.icon-1 i:hover {
+    background-color: var(--category-color);
+    color: var(--text-white);
+    border-radius: 50%;
+}
+
+.books.other-books {
+    margin-top: 20px;
+}
+
+/* ---------------------------------------------------------------------Responsive Style Css Area----------------------------------------------- */
+.other-books .book img {
+    width: 100%;
+}
+
+.other-books .book:hover {
+    transform: scale(1.3) translateX(-44%);
+}
+
+.shelve-books {
+    width: 100%;
+    max-width: 90px;
+}
+
+.shelve-books {
+    width: 86%;
+}
+
+.bible-book-area .artboard-stand {
+    width: 100%;
+    right: 0;
+}
+
+.bible-book-area .lights {
+    max-width: 380px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50px;
+}
+
+.artboard-books2 {
+    margin-top: 20px;
+}
+
+.old-testament-banner .center-frame {
+    left: 56px;
+}
+
+@media (max-width: 2200px) {
+
+    html {
+        overflow-x: hidden;
+    }
+
+    .lights-main {
+        width: 70%;
+        height: 63px;
+        position: absolute;
+        left: 82px;
+    }
+
+    .text-area {
+        display: flex;
+        flex-direction: column;
+        /* width: 440px; */
+        width: 100% !important;
+        height: 334px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        top: 44px;
+        position: relative;
+        position: relative;
+        background-image: url(./images/frame.png);
+        background-size: 24rem 20rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        top: -50px;
+        /* left: 34px; */
+        left: 0 !important;
+    }
+
+    .bible-book-area {
+        right: 0;
+        top: -40px;
+        max-width: 450px;
+        margin-left: auto;
+        margin-right: 35px;
+    }
+
+    #top-book-new {
+        position: absolute;
+        width: 100px;
+        top: calc(-14%);
+    }
+
+    .book-area-neww {
+        left: calc(6%);
+    }
+
+    .book-stand-new {
+        width: 486px;
+        position: relative;
+        left: calc(4%);
+    }
+
+    .old-text h1 {
+        font-family: myFirstFont;
+        font-size: 45.35px;
+        font-weight: 400;
+        text-align: center;
+        color: var(--category-color);
+    }
+
+    .penta-top-book {
+        top: calc(-27%);
+        position: absolute;
+        right: calc(40%);
+        width: 100px;
+    }
+
+    .ani-penta-top-book {
+        position: absolute;
+        width: 100px;
+        top: calc(-34%);
+        left: calc(35%);
+    }
+
+    .tora-top-book {
+        position: absolute;
+        top: calc(-23%);
+        left: calc(40%);
+        width: 100px;
+    }
+
+    .ani-tora-top-book {
+        position: absolute;
+        top: calc(-30%);
+        left: calc(37%);
+        width: 100px;
+    }
+
+    .former-top-book {
+        top: -135px;
+        position: absolute;
+        right: 175px;
+        width: 100px;
+    }
+
+    .ani-former-top-book {
+        position: absolute;
+        top: calc(-23%);
+        right: calc(41%);
+        width: 100px;
+    }
+
+    .minor-top-book {
+        top: -132px;
+        position: absolute;
+        right: 169px;
+        width: 100px;
+    }
+
+    .ani-minor-top-book {
+        position: absolute;
+        top: calc(-49%);
+        left: calc(30%);
+        width: 100px;
+    }
+
+    .writting-top-book {
+        position: absolute;
+        top: calc(-39%);
+        left: calc(36%);
+        width: 100px;
+    }
+
+    .ani-writting-top-book {
+        position: absolute;
+        top: calc(-46%);
+        left: calc(42%);
+        width: 100px;
+    }
+
+    .bible-top-book {
+        position: absolute;
+        top: calc(-20%);
+        left: calc(35%);
+        width: 100px;
+    }
+
+    .pray-top-book {
+        position: absolute;
+        top: calc(-88%);
+        left: calc(40%);
+        width: 100px;
+    }
+
+    .book-area {
+        /* top: 32px; */
+        top: 50px;
+        max-width: 450px;
+        margin: auto;
+    }
+
+    .book-stand {
+        margin: 0 auto;
+        width: 551px;
+        height: 243px;
+    }
+
+    .book-area .top-book {
+        top: -96px;
+        width: 19%;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .artboard-book-area .top-book {
+        top: -90px !important;
+        right: 200px !important;
+        width: 80px !important;
+    }
+
+    .old-top-book {
+        position: absolute;
+        top: -179px;
+        width: 100px;
+        right: 251px;
+    }
+
+    .banner {
+        padding: 160px 0 58px;
+    }
+
+    .aside-sec {
+        position: relative !important;
+        left: 15px !important;
+        top: -128px !important;
+    }
+
+    .book-area-old {
+        top: 19px !important;
+        right: -30px !important;
+    }
+
+    .book-area-old .top-book {
+        top: -110px !important;
+        right: 210px !important;
+    }
+
+    .new-text h1 {
+        font-size: 42.35px !important;
+        margin-left: 72px !important;
+    }
+
+    .lights-new {
+        position: absolute;
+        height: 68px;
+        width: 65%;
+        margin-left: 42px;
+    }
+
+    .lights-old {
+        width: 78%;
+        margin-left: 41px;
+    }
+
+    #standBookNew {
+        width: 118% !important;
+    }
+
+    .new-top-book {
+        position: absolute;
+        width: 100px;
+        top: calc(-10%);
+        left: calc(40%);
+    }
+
+    .book-area-new-ani {
+        top: 44px;
+        left: calc(-12%);
+    }
+
+}
+
+@media (max-width: 1600px) {
+    .text-area {
+        width: 339px;
+        background-size: 100% 19rem;
+        height: 320px;
+        top: -100px;
+    }
+
+    .artboard-book-area {
+        right: 20px !important;
+    }
+
+    .book-stand {
+        position: relative;
+        width: 383px;
+        height: 200px;
+        left: 26px;
+    }
+
+    .book-area {
+        top: 0;
+        width: 450px;
+        right: -70px;
+        /* right: -95px; */
+    }
+
+    .book-area .top-book {
+        top: -95px;
+    }
+
+    .book-stand-old {
+        margin: 16px 0 0 94px !important;
+        width: 400px !important;
+        height: 204px !important;
+    }
+
+    .stand {
+        width: 94%;
+        position: relative;
+        left: -18px !important;
+    }
+
+    .old-top-book {
+        top: -158px;
+        right: 200px;
+    }
+
+    .penta-top-book {
+        top: calc(-30%);
+        width: 80px;
+    }
+
+    .minor-top-book {
+        right: 133px;
+    }
+
+    .former-top-book {
+        right: 134px;
+    }
+
+    .ani-former-top-book {
+        top: calc(-30%);
+    }
+
+    .lights-main {
+        width: 84%;
+        left: 15px;
+    }
+
+    .lights-new {
+        width: 87%;
+        height: 89px;
+        margin-left: 29px;
+    }
+
+    .book-area-old .top-book {
+        top: -62px !important;
+        width: 91px;
+        right: 170px !important;
+    }
+
+    .artboard-book-area .top-book {
+        top: -64px !important;
+        right: 150px !important;
+    }
+
+    .right-plant img {
+        right: 0px;
+        top: -38px;
+    }
+
+    .aside-sec-old {
+        position: relative;
+        left: 17px;
+        top: 15px;
+    }
+
+    .artboard-2-banner {
+        padding: 150px 0;
+    }
+
+    .book-stand-new {
+        width: 368px;
+        position: relative;
+        left: calc(5%);
+    }
+
+    #top-book-new {
+        width: 80px;
+        top: calc(-7%);
+    }
+
+    .new-top-book {
+        width: 80px;
+        top: calc(-7%);
+    }
+
+    .new-text h1 {
+        margin-left: 0px !important;
+    }
+
+    .banner {
+        padding: 216px 0 9px;
+    }
+
+    .center-frame {
+        left: 37px;
+        top: -122px;
+    }
+
+    .old-text h1 {
+        font-size: 35px;
+    }
+
+    .bible-book-area {
+        max-width: 450px;
+        top: -100px;
+        margin-right: 28px;
+    }
+}
+
+@media (max-width:1440px) {
+    .text-area {
+        left: 0 !important;
+        top: -60px;
+        background-size: 100% 17rem;
+        height: 287px;
+    }
+
+    .center-frame {
+        left: 55px;
+        top: -71px;
+    }
+
+    .image {
+        max-width: 100px;
+    }
+
+    .banner {
+        padding: 150px 0 43px !important;
+        background-position: center bottom;
+    }
+
+    .book-area {
+        top: 41px;
+        width: 434px;
+        right: -60px;
+    }
+
+    .main-shelf .stand {
+        width: 91% !important;
+    }
+
+    .artboard-1-banner {
+        padding: 150px 0 !important;
+    }
+
+    .book-stand-old {
+        margin: 16px 0 0 58px !important;
+        width: 413px !important;
+        height: 204px !important;
+    }
+
+    .book-area-old {
+        top: 35px !important;
+        right: 29px !important;
+        width: 511px !important;
+    }
+
+    .aside-sec {
+        top: -85px !important;
+    }
+
+    .bible-book-area {
+        top: 26px;
+    }
+
+    .artboard-2-banner {
+        padding: 143px 0 !important;
+    }
+
+    .new-text h1 {
+        margin-left: 50px !important;
+    }
+
+    .lights-new {
+        width: 80%;
+    }
+
+    .ani-sec .new-text h1 {
+        margin-left: -8px !important;
+        font-size: 25.35px !important;
+    }
+
+    .artboard-banner-pray .artboard-book-area {
+        right: 45px !important;
+    }
+
+    .artboard-1-banner .minor-top-book {
+        right: 117px;
+    }
+
+    .artboard-1-banner .artboard-book-area {
+        right: 50px !important;
+        top: 38px;
+    }
+
+    .former-top-book {
+        right: 106px;
+    }
+
+    .penta-top-book {
+        top: calc(-19%);
+        right: calc(38%);
+    }
+
+    .old-top-book {
+        top: -110px;
+        right: 200px;
+    }
+
+    .old-head .old-text h1 {
+        font-size: 38.35px;
+        padding-top: 10px;
+    }
+
+    .bible-book-area {
+        top: -40px;
+        max-width: 380px;
+        margin-right: 20px;
+    }
+
+    .old-text h1 {
+        font-size: 30px;
+    }
+
+    .bible-book-area .lights {
+        max-width: 300px;
+    }
+
+    .bible-book-area .book .img-fluid {
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .book:hover {
+        transform: scale(1.3) translateX(-21%);
+    }
+
+    .text-area {
+        width: 470px;
+        background-size: 27rem 16rem;
+    }
+
+    .book-stand {
+        width: 370px;
+        height: 190px;
+        left: -10px;
+    }
+
+    .banner {
+        padding: 120px 0;
+
+    }
+
+    .text-area {
+        width: 345px;
+        height: 280px;
+        background-size: 100% 17rem;
+        top: -55px;
+        left: 0;
+    }
+
+    .center-frame {
+        left: 51px;
+    }
+
+    .frame-bottom {
+        margin-top: 0;
+    }
+
+    .book-stand-new {
+        width: 331px !important;
+    }
+
+    #top-book-new {
+        width: 70px;
+        top: calc(-7%) !important;
+        left: calc(46%);
+    }
+
+    .new-text h1 {
+        font-size: 23.35px !important;
+        margin-left: 0 !important;
+    }
+
+    .lights-new {
+        margin-left: 5px !important;
+        width: 86%;
+    }
+
+    .old-text h1 {
+        font-size: 24.35px;
+    }
+
+    .old-top-book {
+        top: -126px !important;
+        right: 214px !important;
+        width: 80px;
+    }
+
+    .book-stand-old {
+        height: 161px !important;
+        width: 376px !important;
+    }
+
+    .book-area-old {
+        right: 26px !important;
+    }
+
+    .lights-old {
+        width: 71% !important;
+        margin-left: 47px !important;
+        height: 54px;
+    }
+
+    .penta-top-book {
+        top: calc(-27%) !important;
+        width: 70px !important;
+    }
+
+    .ani-penta-top-book {
+        top: calc(-31%);
+        width: 80px;
+    }
+
+    .tora-top-book {
+        top: calc(-25%);
+        left: calc(38%);
+        width: 80px;
+    }
+
+    .ani-tora-top-book {
+        top: calc(-28%);
+        left: calc(34%);
+        width: 80px;
+    }
+
+    .ani-minor-top-book {
+        top: calc(-48%);
+        left: calc(35%);
+        width: 80px;
+    }
+
+    .minor-top-book {
+        right: 116px !important;
+        width: 80px;
+        top: -150px;
+    }
+
+    .former-top-book {
+        right: 102px !important;
+        width: 80px;
+        top: -111px;
+    }
+
+    .ani-former-top-book {
+        top: calc(-27%) !important;
+        width: 80px;
+    }
+
+    .writting-top-book {
+        top: calc(-37%);
+        left: calc(37%);
+        width: 80px;
+    }
+
+    .ani-writting-top-book {
+        top: calc(-39%);
+        left: calc(38%);
+        width: 80px;
+    }
+
+    .bible-top-book {
+        top: calc(-8%);
+        width: 80px;
+    }
+
+    .pray-top-book {
+        width: 80px;
+        position: absolute;
+        top: -184px;
+        right: 139px;
+    }
+
+    /* .ani-former-top-book {
+        top: -115px;
+        width: 80px;
+    } */
+    .new-top-book {
+        width: 80px;
+        padding-top: 10px;
+    }
+
+    .text-area .img-fluid {
+        width: 100px;
+    }
+
+    .book-area .top-book {
+        top: -84px;
+        width: 80px;
+    }
+
+    .book-area {
+        right: -59px;
+        top: 21px;
+    }
+
+    .menu ul {
+        gap: 2rem;
+    }
+
+    .new-top-book {
+        top: calc(-10%) !important;
+    }
+
+    .logo-img {
+        max-width: 250px;
+    }
+
+    .old-text {
+        width: 100%;
+        max-width: 23rem;
+    }
+
+    .shelve-books {
+        width: 82% !important;
+    }
+
+    .sm-image img {
+        width: 5rem;
+    }
+
+    .old-text h1 {
+        font-size: 1.3rem;
+    }
+
+    .bible-book-area {
+        right: 0;
+        margin-right: 10px;
+        top: -35px;
+    }
+
+    .text-area p {
+        padding: 0 25px;
+    }
+
+    .old-testament-banner .center-frame {
+        left: 52px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .text-area {
+        width: 345px;
+        height: 285px;
+        background-size: 100% 17rem;
+        top: -55px;
+        left: 0;
+    }
+
+    .center-frame {
+        left: 20px;
+        top: -64px;
+    }
+
+    /* .lights-new {
+        width: 70% !important;
+    } */
+    .book-area {
+        right: -19px;
+        top: 18px;
+        width: 436px;
+    }
+
+    .book-area .top-book {
+        top: -78px;
+        width: 80px;
+    }
+
+    .artboard-book-area .top-book {
+        top: -64px !important;
+        right: 110px !important;
+        width: 77px !important;
+    }
+
+    .aside-sec {
+        left: -7px !important;
+        top: -74px !important;
+    }
+
+    .book-stand {
+        width: 344px;
+        height: 167px;
+        left: 24px;
+        top: 21px;
+    }
+
+    .stand {
+        width: 90%;
+    }
+
+    .menu ul li a {
+        font-size: 12px;
+    }
+
+    .menu ul {
+        gap: 1.5rem;
+    }
+
+    .lights-main {
+        width: 77%;
+        left: 15px;
+    }
+
+    .banner {
+        padding: 144px 0 63px !important;
+        background-position: center bottom;
+        background-position-x: 76%;
+    }
+
+    .book-stand-old {
+        height: 140px !important;
+        width: 376px !important;
+    }
+
+    .book-area-old {
+        right: 36px !important;
+    }
+
+    .lights-old {
+        width: 61% !important;
+        margin-left: 61px !important;
+    }
+
+    .minor-top-book {
+        top: -126px;
+    }
+
+    .penta-top-book {
+        top: calc(-23%) !important;
+    }
+
+    .text-area p {
+        font-size: 11px;
+    }
+
+    .bible-book-area {
+        /* margin-right: 0px; */
+        top: -20px;
+        max-width: 340px;
+    }
+
+    .old-testament-banner .center-frame {
+        left: 29px;
+    }
+
+    .bible-book-area .book .img-fluid {
+        max-width: 83px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .book-area {
+        right: -3px;
+    }
+}
+
+/*@media (max-width: 1280px) {*/
+
+/* .penta-top-book {
+        right: 104px !important;
+    } */
+/*}*/
+
+@media (max-width: 1024px) {
+    .banner {
+        padding: 144px 0 63px !important;
+        background-position-x: 43%;
+    }
+
+    .book-stand {
+        margin: 0 0;
+        width: 311px;
+        height: 139px;
+    }
+
+    .lights-main {
+        width: 74% !important;
+        left: 26px !important;
+        height: 50px;
+
+    }
+
+    .lights-new {
+        width: 65% !important;
+        height: 44px !important;
+        margin-left: 37px !important;
+    }
+
+    #top-book-new {
+        width: 60px !important;
+        top: calc(-7%) !important;
+        left: calc(39%);
+        /* top: calc(-7%); */
+    }
+
+    .book-area .top-book {
+        top: -57px;
+        width: 62px;
+    }
+
+    .book-area {
+        right: -36px;
+        top: 58px;
+    }
+
+    .books {
+        width: 66%;
+    }
+
+    .stand {
+        width: 77%;
+        left: -20px;
+    }
+
+    .lights-old {
+        width: 50%;
+        margin-left: 68px;
+        height: 42px;
+    }
+
+    .text-area .btn {
+        width: 70%;
+    }
+
+    .text-area {
+        background-size: 100% 15rem;
+        width: none;
+        height: none;
+        top: -42px;
+        left: -30px;
+    }
+
+    .text-area h3 {
+        font-size: 12px;
+        line-height: 4.24px;
+    }
+
+    .text-area p {
+        padding: 5px 25px;
+    }
+
+    .text-area h5 {
+        margin-bottom: 0;
+    }
+
+    .text-area .btn {
+        width: 55%;
+    }
+
+    .text-area .img-fluid {
+        width: 70px;
+    }
+
+    .frame-bottom {
+        margin-top: 0px;
+    }
+
+    .nav-btn {
+        font-size: 11px;
+    }
+
+    .menu ul li a {
+        font-size: 10px;
+    }
+
+    .menu ul {
+        gap: 1.25rem;
+    }
+
+    .container-c {
+        max-width: 900px;
+    }
+
+    .logo-img {
+        max-width: 250px !important;
+    }
+
+    .aside-sec {
+        top: -74px !important;
+        left: 10px !important;
+    }
+
+    .old-text h1 {
+        font-size: 20.35px;
+    }
+
+    .old-top-book {
+        top: -100px !important;
+        right: 129px !important;
+        width: 54px;
+    }
+
+    .penta-top-book {
+        top: calc(-25%) !important;
+    }
+
+    .tora-top-book {
+        top: calc(-23%);
+        left: calc(33%);
+        width: 70px;
+    }
+
+    .ani-tora-top-book {
+        top: calc(-25%);
+        left: calc(32%);
+        width: 70px;
+    }
+
+    .minor-top-book {
+        right: 89px !important;
+        width: 50px;
+        top: -61px;
+    }
+
+    .ani-minor-top-book {
+        top: calc(-43%);
+        left: calc(29%);
+        width: 70px;
+    }
+
+    .former-top-book {
+        right: 79px !important;
+        width: 70px;
+        top: -91px;
+    }
+
+    .ani-former-top-book {
+        top: calc(-30%) !important;
+        width: 70px;
+    }
+
+    .writting-top-book {
+        left: calc(34%);
+        width: 70px;
+    }
+
+    .book {
+        top: -80px;
+        right: -11px;
+        width: 70px;
+    }
+
+    .artboard-book-area .top-book {
+        top: -79px;
+        right: 0px;
+        width: 66px;
+    }
+
+    .artboard-book-area {
+        right: 23px !important;
+        top: 50px;
+    }
+
+    .ani-penta-top-book {
+        top: calc(-31%);
+        width: 70px;
+        left: calc(31%);
+    }
+
+    .bible-top-book {
+        top: calc(-15%);
+        width: 64px;
+    }
+
+    .ani-writting-top-book {
+        left: calc(32%);
+        width: 70px;
+    }
+
+    img.additional-stand {
+        left: 6px;
+    }
+
+    .bible-book-area .lights {
+        max-width: 258px;
+        height: 40px;
+    }
+
+    .bible-book-area .lights-1,
+    .bible-book-area .lights-2,
+    .bible-book-area .lights-3 {
+        width: 45px
+    }
+}
+
+
+@media (max-width:768px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .book-area .top-book {
+        top: 0;
+        width: 80px;
+        right: 150px;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 44%;
+        height: 16vh !important;
+    }
+
+    .lights-main {
+        width: 68% !important;
+        left: 33px !important;
+    }
+
+    #canvas {
+        width: 720px !important;
+        left: calc(9%) !important;
+    }
+
+    .penta-top-book {
+        top: calc(-33%) !important;
+        left: calc(73% - 200px);
+    }
+
+    .artboard-book-area {
+        right: -20px !important;
+        top: 50px;
+    }
+
+    .lights {
+        width: 29%;
+        right: calc(36%);
+        height: 49px;
+    }
+
+    .artboard-book-area {
+        right: 0px !important;
+    }
+
+    .main-shelf .book-stand {
+        margin: 0 auto;
+        width: 351px;
+        height: 187px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .book-stand {
+        height: 17vh !important;
+    }
+
+    .book-area .top-book {
+        top: 0;
+        width: 73px;
+        right: 151px;
+    }
+
+    .artboard-book-area {
+        right: -8px !important;
+        top: 50px;
+    }
+
+    .contact-book-wrapper::after {
+        width: 96% !important;
+    }
+
+    .book-wrapper::after {
+        width: 96% !important;
+    }
+
+    .logo img {
+        max-width: 118px;
+        height: 126px;
+    }
+
+    .menu label {
+        display: block;
+    }
+
+    .menu label::before {
+        content: "\2261";
+        position: absolute;
+        font-size: 60px;
+        z-index: 1111;
+        top: 24px;
+        right: 75px;
+    }
+
+    .btn-side a {
+        width: 100%;
+    }
+
+    .menu ul {
+        position: fixed;
+        top: 0px;
+        color: white;
+        background: #fcebd5;
+        right: 0;
+        width: 33.33%;
+        left: 0px;
+        z-index: 111;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        visibility: hidden;
+        transform: translate(-200px, -6px);
+        -webkit-transform: translate(-200px, -6px);
+        -moz-transform: translate(-200px, -6px);
+        transition: 0.6s;
+        gap: 0.725rem;
+        justify-content: center;
+    }
+
+    .menu ul li {
+        display: flex;
+        justify-content: start;
+        padding: 0px 0px;
+    }
+
+    .menu ul li a {
+        font-size: 11px;
+    }
+
+    .menu input:checked+label::before {
+        content: "\00d7";
+        position: fixed;
+        left: -220px;
+        top: -20px;
+    }
+
+    .menu input:checked~ul {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.02);
+    }
+
+    .menu ul li:not(:last-child) a {
+        margin-right: 0px;
+    }
+
+    .book-area .top-book {
+        top: 0;
+        width: 10% !important;
+        /* right: 0; */
+        left: calc(70%);
+    }
+
+    .text-area p {
+        padding: 5px 10%;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 57%;
+        height: 33vh !important;
+    }
+
+    .lights-main {
+        width: 56% !important;
+        left: 80px !important;
+        height: 57px;
+    }
+
+    .book-stand-old {
+        height: 167px !important;
+    }
+
+    .stand {
+        width: 100%;
+    }
+
+    .book .img-fluid {
+        width: 100%;
+    }
+
+    .books {
+        width: 100%;
+    }
+
+    .book {
+        width: 84px !important;
+    }
+
+    .penta-top-book {
+        left: calc(72% - 200px);
+        top: -108px !important;
+    }
+
+    /* #lightsNew {
+        width: 32% !important;
+        left: calc(6%);
+    } */
+    #lightsNew {
+        display: none !important;
+        width: 94% !important;
+        left: calc(-66%);
+    }
+
+    #stand {
+        width: 110% !important;
+    }
+
+    .artboard-book-area {
+        right: -11px !important;
+        top: 50px;
+    }
+
+    #canvas {
+        width: 720px !important;
+        left: calc(7%) !important;
+    }
+
+    .side-frame {
+        display: none;
+    }
+
+    .artboard-stand {
+        width: 50% !important;
+    }
+
+    .old-stand {
+        width: 50%;
+    }
+
+    .artboard-book-area .top-book {
+        top: 6px;
+        right: 100px;
+        width: 66px;
+    }
+
+    .artboard-book {
+        margin-left: -44px !important;
+        width: 17% !important;
+    }
+
+    .lights {
+        display: block !important;
+    }
+
+    .main-shelf .book-stand {
+        margin: 0 auto;
+        width: 351px;
+        height: 187px !important;
+    }
+
+    .main-shelf .stand {
+        width: 114% !important;
+        left: -44px !important;
+    }
+
+    .contact-book-wrapper::after {
+        width: 96% !important;
+    }
+}
+
+@media (max-width: 736px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 57%;
+        height: 53vh !important;
+    }
+
+    .menu ul {
+        position: fixed;
+        top: 12px;
+    }
+
+    .artboard-book-area {
+        right: -4px !important;
+        top: 50px;
+    }
+
+    .artboard-stand {
+        width: 67% !important;
+    }
+
+    .artboard-books {
+        position: relative;
+        display: flex;
+        width: 103%;
+        position: relative;
+        top: 12px;
+        z-index: 3;
+        justify-content: center;
+        left: 28px;
+    }
+
+    .artboard-stand {
+        width: 73% !important;
+        right: -20px !important;
+    }
+
+    .lights {
+        width: 41%;
+        right: calc(27%);
+        height: 49px;
+    }
+}
+
+@media (max-width: 684px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .ani-penta-top-book {
+        left: calc(51%) !important;
+    }
+
+    .penta-top-book {
+        left: calc(79% - 200px);
+        top: -108px !important;
+    }
+
+    .minor-top-book {
+        width: 80px !important;
+        left: calc(48%);
+        top: -112px !important;
+    }
+
+    #canvas {
+        width: 720px !important;
+        left: calc(2%) !important;
+    }
+}
+
+@media (max-width:667px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 57%;
+        height: 64vh !important;
+    }
+
+    .lights-main {
+        width: 61% !important;
+        left: 61px !important;
+        height: 57px;
+    }
+
+    .minor-top-book {
+        width: 80px !important;
+        left: calc(49%);
+        top: -112px !important;
+    }
+
+    .ani-minor-top-book {
+        top: calc(-33%) !important;
+        left: calc(50%) !important;
+    }
+
+    .bible-top-book {
+        left: calc(48%);
+    }
+
+    .book-area .top-book {
+        left: calc(74%);
+    }
+
+    .former-top-book {
+        left: calc(48%);
+    }
+
+    #lightsNew {
+        left: calc(-64%);
+    }
+
+    .penta-top-book {
+        left: calc(82% - 200px);
+    }
+
+    .former-top-book {
+        left: calc(52%);
+    }
+
+    .pray-top-book {
+        left: calc(50%);
+    }
+}
+
+@media (max-width: 480px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    #book-zoom {
+        transform: none !important;
+    }
+
+    .banner {
+        overflow-x: hidden;
+    }
+
+    .book-area .top-book {
+        display: none;
+    }
+
+    .text-area p {
+        padding: 5px 18%;
+    }
+
+    .text-area {
+        background-size: contain;
+        width: 100%;
+        height: 250px;
+        top: -50px;
+        left: 0;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 75%;
+    }
+
+    .menu ul {
+        width: 60.33%;
+    }
+
+    .btn-side a {
+        width: 100%;
+    }
+
+    .old-top-book {
+        left: calc(84% - 200px);
+    }
+
+    .lights-new {
+        width: 37% !important;
+        height: 56px !important;
+        margin-left: 125px !important;
+    }
+
+    .artboard-books {
+        width: 146% !important;
+        left: -99px;
+    }
+
+    .penta-top-book {
+        left: calc(86% - 200px);
+        top: -120px !important;
+        width: 71px !important;
+    }
+
+    #stand {
+        width: 81%;
+        left: -25px;
+        position: relative;
+    }
+
+    #lightsNew {
+        left: calc(-48%) !important;
+    }
+
+    .bible-top-book {
+        top: calc(-19%) !important;
+        width: 64px;
+        left: calc(40%);
+    }
+
+    #top-book-new {
+        left: calc(38%) !important;
+    }
+
+    .ani-penta-top-book {
+        left: calc(43%) !important;
+    }
+
+    .minor-top-book {
+        left: calc(41%);
+    }
+
+    .artboard-book-area {
+        left: calc(3%) !important;
+    }
+
+    .artboard-book-area .top-book {
+        right: 30px;
+    }
+
+    .artboard-stand {
+        width: 89% !important;
+        right: 19px !important;
+    }
+
+    .new-top-book {
+        left: calc(40%) !important;
+    }
+
+    .lights {
+        width: 77% !important;
+        right: calc(7%) !important;
+        display: none !important;
+    }
+
+    .old-stand {
+        width: 60%;
+    }
+
+    .menu input:checked+label::before {
+        left: 50px;
+    }
+
+    .menu label::before {
+        top: 30px;
+        right: 10px;
+    }
+
+    .lights-old {
+        width: 40%;
+        margin-left: 122px;
+        height: 46px;
+    }
+
+    .own-size.page.odd,
+    .own-size.page.even {
+        width: 160px !important;
+        height: 200px !important;
+    }
+
+    .cross-button {
+        right: 55% !important;
+    }
+
+    #canvas {
+        top: 500px !important;
+        left: calc(11%) !important;
+    }
+}
+
+@media (max-width:414px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 57%;
+        height: 30vh !important;
+    }
+
+    .lights-main {
+        width: 102% !important;
+        left: -14px !important;
+        height: 62px;
+    }
+
+    .artboard-stand {
+        width: 73% !important;
+        right: 14px !important;
+    }
+
+    .artboard-books {
+        left: -86px;
+    }
+
+    #canvas {
+        left: calc(5%) !important;
+    }
+
+    .stand {
+        width: 131%;
+        left: -53px;
+    }
+
+    #lightsNew {
+        left: calc(-44%) !important;
+    }
+
+    .old-top-book {
+        left: calc(96% - 200px);
+    }
+
+    .former-top-book {
+        left: calc(42%);
+    }
+
+    .penta-top-book {
+        left: calc(95% - 200px);
+    }
+
+    .pray-top-book {
+        left: calc(41%);
+    }
+
+    .main-shelf .stand {
+        width: 102% !important;
+        left: -22px !important;
+    }
+}
+
+@media (max-width: 412px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 57%;
+        height: 28vh !important;
+    }
+
+    .lights-main {
+        width: 85% !important;
+        left: -1px !important;
+        height: 56px;
+    }
+
+    .old-top-book {
+        left: calc(96% - 200px);
+    }
+
+    .artboard-stand {
+        width: 94% !important;
+        right: 13px !important;
+    }
+
+    #canvas {
+        top: 500px !important;
+        left: calc(6%) !important;
+    }
+
+    .penta-top-book {
+        left: calc(95% - 200px);
+        top: -120px !important;
+        width: 71px !important;
+    }
+
+    .stand {
+        width: 138%;
+        left: -68px;
+    }
+}
+
+@media (max-width:375px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+
+    .book-stand {
+        margin: auto;
+        width: 57%;
+        height: 36vh !important;
+        left: 19px
+    }
+
+    #top-book-new {
+        left: calc(42%) !important;
+    }
+
+    .penta-top-book {
+        left: calc(100% - 200px);
+    }
+
+    .pray-top-book {
+        left: calc(43%);
+    }
+}
+
+
+
+/* --------------------------------------------- Inner Pages Css --------------------------------------------*/
+.aside-sec {
+    position: relative;
+    left: 50px;
+    top: -45px;
+}
+
+.side-frame {
+    width: 100%;
+    height: auto;
+}
+
+.center-image1 {
+    width: 60%;
+}
+
+#album {
+    position: absolute !important;
+    width: 60%;
+    height: 500px;
+    margin: 5% auto;
+    top: 370px;
+    left: 180px;
+    z-index: 1111;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.artboard-banner {
+    background: url(./images/Artboard-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px 0;
+}
+
+.artboard-banner-animation {
+    background: url(./images/Artboard-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 150px 0;
+    overflow-x: hidden !important;
+}
+
+.artboard-book-area {
+    right: 60px;
+}
+
+.artboard-stand {
+    width: 110%;
+    filter: drop-shadow(0 23px 9px var(--text-lightDark));
+    position: relative;
+    right: 23px;
+}
+
+.artboard-books {
+    position: relative;
+    display: flex;
+    width: 100%;
+    position: relative;
+    top: 17px;
+    z-index: 3;
+    justify-content: center;
+}
+
+/* .artboard-book-area .top-book {
+    position: absolute;
+    top: -100px;
+    right: 0px;
+    width: 90px;
+} */
+.artboard-book {
+    z-index: 9;
+    transition: 0.6s;
+    margin-left: -15px;
+}
+
+.artboard-book:hover {
+    transform: scale(1.3) translateX(-20%);
+}
+
+.text {
+    padding: 0 33px;
+    display: flex;
+    justify-content: start;
+    text-align: start;
+    color: white;
+}
+
+@media (max-width: 1380px) {
+    .artboard-book-area {
+        right: 5px;
+    }
+
+    /* .artboard-book-area .top-book {
+        top: -52px;
+        right: 130px;
+        width: 75px;
+    } */
+    .lights-old {
+        width: 52% !important;
+        margin-left: 72px !important;
+        height: 46px;
+    }
+
+    .aside-sec {
+        position: relative;
+        left: -3px;
+        top: -74px !important;
+        width: 115%;
+    }
+
+    .artboard-banner-animation {
+        padding: 70px 0;
+    }
+
+    .container-c {
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .artboard-books {
+        gap: 0rem;
+        margin-left: 10px;
+    }
+
+    .artboard-book .img-fluid {
+        width: 70%;
+    }
+
+    .artboard-book-area {
+        right: -46px;
+    }
+
+    .artboard-book-area {
+        right: 10px !important;
+    }
+
+    .artboard-book-area .top-book {
+        top: -94px;
+        right: 0px;
+        width: 83px;
+    }
+
+    .artboard-book {
+        margin-left: -44px;
+    }
+
+    .center-image {
+        width: 50%;
+    }
+
+    .artboard-banner {
+        padding: 150px 0;
+    }
+
+    .other-books .book img {
+        width: 84%;
+    }
+
+    .main-shelf .stand {
+        width: 93% !important;
+        left: 1px !important;
+    }
+}
+
+/* @media (max-width: 767px) {
+    .artboard-book-area {
+        right: -11px !important;
+        top: 50px;
+    }
+    #canvas {
+        width: 720px !important;
+        left: calc(7% ) !important;
+    }
+    .side-frame {
+        display: none;
+    }
+    .artboard-stand {
+        width: 50% !important;
+    }
+    .old-stand {
+        width: 50%;
+    }
+    .artboard-book-area .top-book {
+        top: 6px;
+        right: 100px;
+        width: 66px;
+    }
+    .artboard-book {
+        margin-left: -44px !important;
+        width: 17% !important;
+    }
+    .artboard-book-area {
+        right: -11px !important;
+        top: 50px;
+    }
+    #canvas {
+        width: 720px !important;
+        left: calc(7% ) !important;
+    }
+    .side-frame {
+        display: none;
+    }
+    .artboard-stand {
+        width: 50% !important;
+    }
+    .old-stand {
+        width: 50%;
+    }
+    .artboard-book-area .top-book {
+        top: 6px;
+        right: 100px;
+        width: 66px;
+    }
+    .artboard-book {
+        margin-left: -44px !important;
+        width: 17% !important;
+    }
+
+
+
+
+} */
+/* @media (max-width:648px) {
+    .own-size.page.odd,
+    .own-size.page.even {
+        width: 250px !important;
+        height: 380px !important;
+    }
+} */
+@media (max-width: 380px) {
+
+    .book-stand {
+        width: 100%;
+    }
+
+    #book-zoom {
+        height: 400px !important;
+    }
+
+    #canvas {
+        height: 400px !important;
+    }
+
+    #canvas {
+        top: 500px !important;
+        left: calc(2%) !important;
+    }
+
+    #lightsNew {
+        display: none !important;
+    }
+
+    .menu input:checked+label::before {
+        left: 178px;
+    }
+
+    .lights-new {
+        width: 47% !important;
+        margin-left: 79px !important;
+    }
+
+    .old-top-book {
+        left: calc(95% - 200px);
+    }
+
+    .penta-top-book {
+        left: calc(96% - 200px);
+    }
+
+    .artboard-stand {
+        width: 69% !important;
+        right: 0px !important;
+    }
+
+    .artboard-books {
+        width: 163% !important;
+        left: -92px;
+    }
+
+    .artboard-book-area {
+        left: calc(0%) !important;
+    }
+}
+
+@media (max-width:375px) {
+    .lights-main {
+        width: 84% !important;
+        left: 19px !important;
+        height: 90px;
+    }
+
+    .book-area {
+        right: 4px !important;
+    }
+
+    .menu input:checked+label::before {
+        left: 35px;
+    }
+
+    .artboard-stand {
+        width: 90% !important;
+        right: -3px !important;
+    }
+}
+
+/* ---------------------------------------Old Testament Css ------------------------------------- */
+
+.artboard-1-banner {
+    background: url(./images/Artboard\ 1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 250px 0;
+    overflow-x: hidden !important;
+}
+
+.artboard-2-banner {
+    background: url(./images/Artboard-2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 250px 0;
+    overflow-x: hidden !important;
+}
+
+.artboard-3-banner {
+    background: url(./images/Artboard-2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 82px 0;
+    overflow-x: hidden !important;
+}
+
+/* .old-text{
+    position: relative;
+    top: -72px;
+    left: -38px;
+} */
+/* .old-text h1 {
+    font-family: myFirstFont;
+    font-size: 26.35px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--category-color);
+} */
+.old-text h2 {
+    font-family: myFirstFont;
+    font-size: 20.35px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--category-color);
+}
+
+.new-text h1 {
+    font-family: myFirstFont;
+    font-size: 26.35px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--category-color);
+    margin-bottom: 0px;
+    padding-top: 45px;
+}
+
+.new-text h2 {
+    font-family: myFirstFont;
+    font-size: 20.35px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--category-color);
+}
+
+.old-stand {
+    width: 100%;
+    filter: drop-shadow(0 23px 9px var(--text-white));
+}
+
+.book-area-old {
+    top: -90px;
+    right: 0px;
+}
+
+.book-area-old .top-book {
+    position: absolute;
+    top: -80px;
+    right: 41px;
+}
+
+.aside-sec-old {
+    position: relative;
+    left: 50px;
+    top: 47px;
+}
+
+.book-stand-old {
+    margin: 16px 0 0 94px;
+    width: 513px;
+    height: 204px;
+}
+
+.right-plant img {
+    position: absolute;
+    right: 37px;
+    top: -18px;
+}
+
+/* -------------------------------------------------old testament responsive-------------------------------------------- */
+
+/* @media (max-width: 1600px) {
+    .book-stand-old {
+        margin: 16px 0 0 94px;
+        width: 400px;
+        height: 204px;
+    }
+    .old-top-book {
+        top: -158px;
+        right: 200px;
+    }
+    .penta-top-book {
+        top: calc(-30%);
+        width: 80px;
+    }
+    .minor-top-book {
+        right: 133px;
+    }
+    .former-top-book {
+        right: 134px;
+    }
+    .ani-former-top-book {
+        top: calc(-30%);
+    }
+    .lights-main {
+        width: 84%;
+        left: 15px;
+    }
+    .lights-new {
+        width: 87%;
+        height: 89px;
+        margin-left: 29px;
+    }
+    .book-area-old .top-book {
+        top: -62px !important;
+        width: 91px;
+        right: 170px !important;
+    }
+    .artboard-book-area .top-book {
+        top: -64px !important;
+        right: 150px !important;
+}
+    .right-plant img {
+        right: 0px;
+        top: -38px;
+    }
+    .aside-sec-old {
+        position: relative;
+        left: 17px;
+        top: 15px;
+    }
+    .artboard-2-banner{
+        padding: 150px 0;
+    }
+    .book-stand-new {
+        width: 368px;
+        position: relative;
+        left: calc(5%);
+    }
+    #top-book-new {
+        width: 80px;
+        top: calc(-7%);
+    }
+    .new-top-book {
+        width: 80px;
+        top: calc(-7%);
+    }
+    .new-text h1 {
+        margin-left: 0px !important;
+    }
+} */
+@media (max-width: 1400px) {
+    .aside-sec-old {
+        top: 26px;
+    }
+
+    .artboard-1-banner {
+        padding: 200px 0;
+    }
+
+    .artboard-2-banner {
+        padding: 150px 0;
+    }
+
+    .book-area-old {
+        top: 12px;
+        right: -30px;
+    }
+
+    .book-stand-old {
+        margin: 16px 0 0 70px;
+        width: 322px;
+        height: 147px;
+    }
+
+    /* .old-text h1 {
+        font-size: 29.35px;
+    } */
+    .book-area-old .top-book {
+        width: 80px;
+        top: -78px !important;
+    }
+
+    .right-plant img {
+        right: 34px;
+        top: 0px;
+        width: 81px;
+    }
+
+    .old-top-book {
+        top: -109px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .right-plant img {
+        right: -4px;
+        top: -30px;
+        width: 61px;
+    }
+
+    .book-area-old .top-book {
+        top: -32px !important;
+        width: 59px;
+        right: 127px !important;
+    }
+
+    .book-stand-old {
+        margin: 16px 0 0 10px;
+        width: 322px;
+        height: 118px;
+    }
+
+    .book-area-old {
+        top: -90px;
+        right: -5px !important;
+    }
+
+    .books-old {
+        width: 50%;
+    }
+
+    /* .old-text h1 {
+        font-size: 23.35px;
+    } */
+    .artboard-1-banner {
+        padding: 100px 0;
+    }
+
+    .artboard-2-banner {
+        padding: 82px 0 !important;
+    }
+
+    .artboard-banner-animation {
+        padding: 66px 0;
+    }
+
+    .artboard-book-stand {
+        padding: 0 !important;
+    }
+
+    .text-area {
+        top: -57px;
+        left: 0 !important;
+        height: 250px;
+
+    }
+
+    .main-shelf .stand {
+        width: 86% !important;
+        left: -2px !important;
+    }
+
+    /* .banner {
+        padding: 120px 0 !important;
+    } */
+
+    .book-area {
+        right: -20px;
+        top: 0;
+        width: 350px;
+    }
+
+    .book-area-old {
+        right: 39px !important;
+    }
+
+    .stand {
+        width: 77%;
+        left: -13px;
+    }
+
+    .old-top-book {
+        top: -79px !important;
+        right: 245px !important;
+        width: 54px;
+    }
+
+    .artboard-1-banner .artboard-book-area {
+        right: 0px !important;
+        top: 38px;
+    }
+
+    .artboard-banner-pray .artboard-book-area {
+        right: 19px !important;
+    }
+
+    .book-stand-old {
+        height: 140px !important;
+        width: 346px !important;
+    }
+
+    .old-text h1 {
+        font-size: 20.35px !important;
+    }
+
+    .bible-book-area {
+        right: calc(-1%);
+    }
+
+    .sm-image {
+        right: 13% !important;
+    }
+
+
+}
+
+@media (max-width: 991px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .contact-book-wrapper::after {
+        width: 49% !important;
+    }
+
+    .artboard-book-area {
+        right: 0px !important;
+        left: auto !important;
+    }
+
+    .own-size.page.odd,
+    .own-size.page.even {
+        width: 300px !important;
+        height: 480px !important;
+    }
+
+    #canvas {
+        width: 720px !important;
+        left: calc(20%) !important;
+    }
+
+    .depth {
+        height: 97% !important;
+        top: 5px !important;
+    }
+
+    .book-area-new-ani {
+        top: 44px;
+        left: calc(2%);
+    }
+
+    .new-top-book {
+        top: calc(-17%) !important;
+        left: calc(45%);
+    }
+
+    /* .artboard-book-area {
+        top: -36px !important;
+    } */
+    /* .hard.front-side.page.even.fixed,
+    .hard.fixed.back-side.page.odd {
+        width: 450px !important;
+        height: 550px !important;
+    } */
+    /* .sj-book.animated {
+        width: 900px !important;
+    } */
+    /* .sj-book .odd{
+        background: none !important;
+        background-color: var(--text-white) !important;
+    } */
+    #canvas {
+        top: 180px !important;
+    }
+
+    /* .page-wrapper:not(:nth-child(1)),.page-wrapper:not(:nth-child(2)),.page-wrapper {
+        top: 40px !important;
+    } */
+
+    .lights-old {
+        display: none !important;
+    }
+
+    .banner {
+        background-image: url(./images/res-bg-3.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+        padding: 163px 0 !important;
+    }
+
+    .artboard-1-banner {
+        background-image: url(../assests/images/Artboard-bg-copy.png) !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    .bible-book-area {
+        right: calc(0%) !important;
+        margin-right: auto;
+        max-width: 700px;
+    }
+
+    .bible-book-area .old-text {
+        max-width: 100%;
+        top: 0;
+    }
+
+
+    .book-area-neww {
+        left: calc(0%);
+    }
+
+    .lights-old {
+        width: 25%;
+        margin-left: 189px;
+        height: 46px;
+    }
+
+    .artboard-banner-pray {
+        background-image: url(../assests/images/Artboard-bg-copy.png) !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    .artboard-2-banner {
+        background-image: url(../assests/images/Artboard-bg-copy.png) !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    .artboard-3-banner {
+        background-image: url(../assests/images/Artboard-bg-copy.png) !important;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow-x: hidden;
+    }
+
+    .artboard-book .img-fluid {
+        width: 100px;
+    }
+
+    .btn-side a,
+    button.btn {
+        font-size: 14px;
+    }
+
+    .stand {
+        width: 100%;
+    }
+
+    .book-stand-old {
+        width: 100% !important;
+        height: 140px !important;
+    }
+
+    .old-text h1 {
+        margin-left: 0px !important;
+    }
+
+    .old-head .old-text h1 {
+        font-size: 20.35px;
+        margin-left: 84px !important;
+    }
+
+    .old-top-book {
+        left: calc(91% - 198px);
+        width: 80px !important;
+        top: -115px !important;
+    }
+
+    .former-top-book {
+        left: calc(45%);
+    }
+
+    .penta-top-book {
+        left: calc(66% - 200px);
+        top: -120px !important;
+        width: 80px !important;
+    }
+
+    .tora-top-book {
+        top: calc(-30%) !important;
+        left: calc(46%) !important;
+    }
+
+    .ani-tora-top-book {
+        top: calc(-33%) !important;
+        left: calc(46%) !important;
+    }
+
+    .writting-top-book {
+        left: calc(47%) !important;
+        top: calc(-31%) !important;
+    }
+
+    .ani-writting-top-book {
+        left: calc(47%) !important;
+    }
+
+    .bible-top-book {
+        top: calc(-15%);
+        width: 64px;
+        left: calc(44%);
+    }
+
+    .books {
+        width: 100% !important;
+        margin-top: 30px;
+    }
+
+    .other-books .book img {
+        width: 100% !important;
+    }
+
+    .lights-new {
+        width: 25% !important;
+        height: 56px !important;
+        margin-left: 186px !important;
+    }
+
+    .lights-main {
+        width: 65% !important;
+        left: 46px !important;
+    }
+
+    .lights {
+        width: 31%;
+        right: calc(35%);
+        height: 49px;
+    }
+
+    .bible-book-area .lights {
+        max-width: 470px !important;
+        height: 44px !important;
+        width: 100% !important;
+    }
+
+    .bible-book-area .lights-1,
+    .bible-book-area .lights-2,
+    .bible-book-area .lights-3 {
+        width: 61px;
+    }
+
+    .logo img {
+        max-width: 120px;
+        height: auto;
+    }
+
+    .book-col-old {
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-wrapper {
+        width: 100%;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text-area {
+        margin-bottom: 20px;
+        background-size: contain;
+        width: 56%;
+        height: 285px;
+        top: 0;
+        left: 0;
+    }
+
+    .text-area .btn {
+        width: 30%;
+        margin: 15px;
+    }
+
+    .frame-bottom {
+        margin-top: 0;
+        width: 25%;
+    }
+
+    .text-area p {
+        padding: 5px 15%;
+    }
+
+    .banner {
+        padding: 50px 0 100px !important;
+    }
+
+    .old-testament-banner {
+        padding: 155px 0 50px !important;
+    }
+
+    .book-area {
+        width: 100%;
+        top: -40px;
+        right: 0;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 44%;
+        height: 22vh !important;
+    }
+
+    .menu ul {
+        gap: 1.725rem;
+    }
+
+    .book-area .top-book {
+        top: -84px;
+        width: 80px;
+    }
+
+    .bible-book-area .artboard-stand {
+        width: 100%;
+    }
+
+    .artboard-book {
+        margin-left: -44px !important;
+        width: 12% !important;
+    }
+
+    .minor-top-book {
+        width: 80px !important;
+        left: calc(45%);
+        top: -112px !important;
+    }
+
+    .ani-penta-top-book {
+        left: calc(45%) !important;
+    }
+
+    .ani-former-top-book {
+        left: calc(45%);
+    }
+
+    .ani-minor-top-book {
+        top: calc(-33%) !important;
+        left: calc(45%) !important;
+    }
+
+    .pray-top-book {
+        left: calc(45%);
+    }
+
+    #stand {
+        width: 100%;
+    }
+
+    /* #stand{
+        width: 50%;
+    } */
+
+    /* #lightsNew{
+        width: 25% !important;
+        height: 70px !important;
+        left: calc(18%);
+    } */
+    #lightsNew {
+        width: 75% !important;
+        height: 70px !important;
+        left: calc(-55%);
+    }
+
+    .book-stand-new {
+        width: 368px;
+        position: relative;
+        left: calc(3%) !important;
+    }
+
+    .new-text h1 {
+        font-size: 30.35px !important;
+    }
+
+    #top-book {
+        top: calc(-14%) !important;
+        width: 80px !important;
+        left: calc(45%);
+    }
+
+    #top-book-new {
+        width: 70px !important;
+        top: calc(-13%) !important;
+        left: calc(46%);
+        /* top: calc(-7%); */
+    }
+
+    .main-shelf .book-stand {
+        margin: 0 auto;
+        width: 351px;
+        height: 153px !important;
+    }
+
+    .book-area {
+        width: 100%;
+        top: 0 !important;
+        margin-top: 100px;
+        right: 0;
+    }
+
+    .contact-book-wrapper::after {
+        width: 49% !important;
+    }
+
+    .center-frame {
+        /* left: 0;
+        top: 0;
+        max-width: 600px;
+        margin: auto; */
+        display: none;
+    }
+
+    .main-shelf .stand {
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+
+    .book {
+        width: 100px;
+    }
+
+    .lights-main {
+        width: 65% !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+
+    .bible-book-area .book {
+        width: 110px !important;
+    }
+
+    .bible-book-area .book .img-fluid {
+        max-width: 105px;
+    }
+
+    .old-text h1 {
+        font-size: 27.35px !important;
+    }
+}
+
+@media (max-width:800px) {
+    .lights-main {
+        width: 65% !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 44%;
+        height: 28vh !important;
+    }
+
+    .book-area .top-book {
+        top: -80px;
+        width: 90px;
+        right: 120px;
+    }
+
+    .text-area {
+        top: 0px;
+        left: 0px !important;
+    }
+
+
+    #canvas {
+        width: 720px !important;
+        left: calc(5%) !important;
+    }
+
+    .stand {
+        width: 105%;
+        left: -13px;
+    }
+
+    .old-top-book {
+        top: -108px !important;
+        right: 245px !important;
+        width: 54px;
+    }
+
+    .book-area-old {
+        right: 53px !important;
+    }
+
+    .banner {
+        padding: 160px 0 240px 0 !important;
+        background-position-y: top;
+    }
+
+
+}
+
+@media (max-width:767px) {
+    .book-area .top-book {
+        display: none;
+    }
+
+    .bible-book-area .artboard-stand {
+        width: 100% !important;
+        max-width: 470px;
+        right: 0 !important;
+    }
+
+    .bible-book-area .lights {
+        display: flex !important;
+        width: 100% !important;
+        max-width: 340px;
+    }
+
+    .old-testament-banner {
+        padding-bottom: 30px !important;
+    }
+
+    .bible-book-area .artboard-books {
+        margin-left: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    #book-zoom {
+        transform: none !important;
+    }
+
+    .banner {
+        overflow-x: hidden;
+    }
+
+
+
+    .text-area p {
+        padding: 5px 18%;
+    }
+
+    .text-area {
+        background-size: contain;
+        width: 100%;
+        height: 250px;
+        top: 0;
+        left: 0;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 75%;
+    }
+
+    .menu ul {
+        width: 60.33%;
+    }
+
+    .btn-side a {
+        width: 100%;
+    }
+
+    .old-top-book {
+        left: calc(95% - 200px) !important;
+    }
+
+    .lights-new {
+        width: 37% !important;
+        height: 56px !important;
+        margin-left: 125px !important;
+    }
+
+    .artboard-books {
+        width: 100% !important;
+        left: 0;
+    }
+
+    .penta-top-book {
+        left: calc(86% - 200px) !important;
+        top: -120px !important;
+        width: 71px !important;
+    }
+
+    #stand {
+        width: 81%;
+        left: -25px;
+        position: relative;
+    }
+
+    #lightsNew {
+        left: calc(-48%) !important;
+    }
+
+    .bible-top-book {
+        top: calc(-19%) !important;
+        width: 64px;
+        left: calc(40%);
+    }
+
+    #top-book-new {
+        left: calc(38%) !important;
+    }
+
+    .ani-penta-top-book {
+        left: calc(43%) !important;
+    }
+
+    .minor-top-book {
+        left: calc(41%);
+    }
+
+    .artboard-book-area {
+        left: calc(3%) !important;
+    }
+
+    .artboard-book-area .top-book {
+        right: 30px;
+    }
+
+    .artboard-stand {
+        width: 89% !important;
+        right: 19px !important;
+    }
+
+    .new-top-book {
+        left: calc(40%) !important;
+    }
+
+    .lights {
+        width: 77% !important;
+        right: calc(13%) !important;
+    }
+
+    .old-stand {
+        width: 60%;
+    }
+
+    .menu input:checked+label::before {
+        left: 50px;
+    }
+
+    .menu label::before {
+        top: 30px;
+        right: 10px;
+    }
+
+    .lights-old {
+        width: 40%;
+        margin-left: 122px;
+        height: 46px;
+    }
+
+    .own-size.page.odd,
+    .own-size.page.even {
+        width: 160px !important;
+        height: 200px !important;
+    }
+
+    .cross-button {
+        right: 55% !important;
+    }
+
+    #canvas {
+        top: 500px !important;
+        left: calc(14%) !important;
+    }
+
+    .stand {
+        width: 108%;
+        left: -31px;
+    }
+
+    .old-text h1 {
+        font-size: 20.35px;
+        margin-left: 0px;
+    }
+
+    .ani-minor-top-book {
+        top: calc(-28%) !important;
+        left: calc(41%) !important;
+    }
+
+
+
+    .book-area-old {
+        right: -18px !important;
+    }
+
+    #lightsNew {
+        left: calc(-43%) !important;
+    }
+
+    .pray-top-book {
+        left: calc(41%);
+    }
+
+    .book-area-old {
+        right: 42px !important;
+    }
+
+    .stand {
+        width: 95% !important;
+
+    }
+
+    .main-shelf .stand {
+        width: 100% !important;
+        left: 0 !important;
+    }
+}
+
+@media (max-width:414px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 57%;
+        height: 30vh !important;
+    }
+
+    .lights-main {
+        width: 80% !important;
+        left: 50% !important;
+        transform: translateX(-50%);
+        height: 62px;
+    }
+
+    .artboard-stand {
+        width: 73% !important;
+        right: 14px !important;
+    }
+
+    .artboard-books {
+        left: 0 !important;
+    }
+
+    .penta-top-book {
+        left: calc(95% - 200px) !important;
+    }
+
+
+    #canvas {
+        left: calc(5%) !important;
+    }
+
+    .stand {
+        width: 105%;
+        left: -29px;
+    }
+
+    #lightsNew {
+        left: calc(-44%) !important;
+    }
+
+    .old-top-book {
+        left: calc(104% - 200px) !important;
+    }
+
+    .former-top-book {
+        left: calc(42%);
+    }
+
+    .pray-top-book {
+        left: calc(41%);
+    }
+
+    .book-area-old {
+        right: 19px !important;
+    }
+
+    .book-area-old {
+        right: 42px !important;
+    }
+
+    .stand {
+        width: 95% !important;
+
+    }
+
+    .main-shelf .stand {
+        width: 102% !important;
+        left: -22px !important;
+    }
+}
+
+@media (max-width:375px) {
+    img.additional-stand {
+        left: 0px;
+    }
+
+    .bible-book-area .lights {
+        max-width: 280px !important;
+    }
+
+    .book-stand {
+        margin: auto;
+        width: 57%;
+        height: 33vh !important;
+        left: 19px;
+    }
+
+    #top-book-new {
+        left: calc(42%) !important;
+    }
+
+    .penta-top-book {
+        left: calc(100% - 200px);
+    }
+
+    .pray-top-book {
+        left: calc(36%);
+    }
+
+
+    .stand {
+        width: 104%;
+        left: -27px;
+    }
+
+    .book-area-old {
+        right: 10px !important;
+    }
+
+    #canvas {
+        left: calc(3%) !important;
+    }
+
+    .book-area-old {
+        right: 42px !important;
+    }
+
+    .stand {
+        width: 85%;
+        left: -16px !important;
+    }
+
+    .book {
+        width: 77px !important;
+    }
+
+    .bible-book-area .lights {
+        max-width: 250px;
+    }
+
+    .bible-book-area .artboard-book {
+        width: 85px !important;
+    }
+
+}
+
+@media (max-width: 360px) {
+    .stand {
+        width: 85%;
+        left: -16px !important;
+    }
+
+    .books {
+        width: 66% !important;
+    }
+
+    .book-stand {
+        height: 24vh !important;
+
+    }
+
+    .lights-main {
+        width: 64% !important;
+        left: 45px !important;
+        height: 35px;
+    }
+
+    .book-area {
+        right: 9px !important;
+        top: -83px !important;
+    }
+
+    #canvas {
+        left: calc(0%) !important;
+    }
+
+    .book-area-old {
+        right: 42px !important;
+    }
+
+    .main-shelf .stand {
+        width: 89% !important;
+        left: -1px !important;
+    }
+
+}
+
+#canvas {
+    position: absolute;
+    left: calc(48% - 450px);
+    /* z-index: 9; */
+    top: 94px;
+    margin: 0 !important;
+    /* position: relative; */
+}
+
+
+#book-zoom {
+    position: relative;
+}
+
+.cross-button {
+    border: 0;
+    top: -38px;
+    position: absolute;
+}
+
+/* .cross-button i {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000; */
+/* } */
+
+.sj-book .p1,
+.sj-book .p2,
+.sj-book .side1,
+.sj-book .side2 {
+    background-position: unset !important;
+}
+
+.sj-book .p1::before {
+    background-size: 100% 100% !important;
+}
+
+
+/* --------------------------------------------------About-us-Styling-Area------------------------------------ */
+
+.about-us-banner {
+    background-color: #735536;
+    padding: 100px 0;
+}
+
+.book-wrapper {
+    position: relative;
+    background-image: url(./images/about-us-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    padding: 20px 0;
+}
+
+.right-book {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo-img {
+    position: relative;
+    z-index: 9;
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book-wrapper::before {
+    content: '';
+    background-image: url(./images/right-side-about.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    position: absolute;
+    width: 48%;
+    top: 25px;
+    left: 2%;
+    height: 93.5%;
+}
+
+.book-wrapper::after {
+    content: '';
+    background-image: url(./images/right-side-about.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    width: 48%;
+    top: 25px;
+    right: 2%;
+    height: 93.5%;
+    background-color: #eee1d1;
+    background-size: 100% 100%;
+}
+
+.left-side {
+    position: relative;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 0 50px 0 21px;
+}
+
+.about-heading {
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 45.4px;
+    line-height: 65.09px;
+    color: var(--category-color);
+    padding-top: 50px;
+}
+
+.about-h5 {
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--category-color);
+    line-height: 29.26px;
+    padding-bottom: 30px;
+}
+
+.content {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: var(--text-dark)000;
+    line-height: 21.94px;
+}
+
+/* -----------------------------------------------About-us-styling-End--------------------------------------- */
+.contact-us-banner {
+    background-color: #735536;
+    padding: 100px 0;
+}
+
+.contact-heading {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 45px;
+    color: var(--text-dark);
+    line-height: 52px;
+    margin-bottom: 26.67px;
+}
+
+.contact-book-wrapper {
+    position: relative;
+    background-image: url(./images/about-us-bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    padding: 20px 0;
+}
+
+.contact-right-book {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*.logo-img{*/
+/*    position: relative;*/
+/*    z-index: 9;*/
+/*    max-width: 100%;*/
+/*    width: 100%;*/
+/*    max-width: 300px;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+.contact-book-wrapper::before {
+    content: '';
+    background-color: #eee1d1;
+    position: absolute;
+    width: 48%;
+    top: 22px;
+    left: 2%;
+    height: 93.5%;
+    background: linear-gradient(88.74deg, #D7C5AF 1.08%, #FCEBD5 18.19%, #FCEBD5 39.57%, #FCEBD5 60.96%, #E9DAC5 86.62%, #EDDDC8 238.56%);
+    background-blend-mode: multiply;
+
+}
+
+/* .book-overlay {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+
+    background: linear-gradient(90deg, #B4B6B8 0%, #CFD0D2 4%, #E4E5E6 9%, #F3F4F4 14%, #FCFCFC 20%, var(--text-white)FFF 28%);
+background-blend-mode: multiply;
+} */
+.contact-book-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 48%;
+    top: 22px;
+    right: 2%;
+    height: 93.5%;
+    background-color: #eee1d1;
+    background: linear-gradient(88.74deg, #D7C5AF 1.08%, #FCEBD5 18.19%, #FCEBD5 39.57%, #FCEBD5 60.96%, #E9DAC5 86.62%, #EDDDC8 238.56%);
+    background-blend-mode: multiply;
+
+
+}
+
+.contact-book-wrapper.register-wrap::before,
+.contact-book-wrapper.register-wrap::after {
+    height: 94.5%;
+}
+
+.contact-left-side {
+    position: relative;
+    z-index: 12;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 70px;
+}
+
+:is(.login-form, .new-pass-form) {
+    padding: 100px 20px;
+}
+
+.register-form {
+    padding: 50px 20px;
+}
+
+:is(.forgot-form, .verification-form, .successful-form) {
+    padding: 150px 20px;
+}
+
+.form-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object-fit: cover;
+}
+
+button.btn.dropdown-toggle {
+    position: absolute;
+    right: 0;
+}
+
+.form,
+textarea {
+    border: none;
+    padding: 8px 10px;
+    background-color: transparent;
+    border: 1px solid #828282;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.form,
+textarea::placeholder {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #828282;
+}
+
+.form:focus,
+textarea:focus {
+    background-color: var(--text-white);
+    outline: none;
+}
+
+.dropping {
+    position: relative;
+}
+
+textarea {
+    height: 100px;
+    padding-top: 25px;
+    resize: none;
+}
+
+.form-label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--btn-bg);
+    letter-spacing: 0.25px;
+    margin-bottom: 3px;
+}
+
+.form-select {
+    color: #828282;
+}
+
+.form-select:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #828282;
+}
+
+/* verification css */
+.verification-area {
+    padding: 0 20px;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.hd-lg {
+    font-family: "Open Sans", sans-serif;
+    color: #000;
+    font-size: 45px;
+    font-weight: 400;
+    margin-bottom: 26px;
+}
+
+.form-check-label.cs-label,
+.label-field {
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    color: #863c21;
+    padding-bottom: 7px;
+}
+
+.input-field {
+    border: 1px solid #828282;
+    font-size: 13px;
+    color: #828282;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.input-field::placeholder {
+    color: #828282;
+}
+
+.input-field:focus-visible {
+    background-color: #fff;
+    outline: #828282;
+}
+
+.form-check-input.cs-check {
+    border: 1px solid #863c21;
+    width: 20px;
+    height: 20px;
+}
+
+.form-check-input.cs-check:checked {
+    background-color: #863c21;
+}
+
+.form-check-input:focus {
+    box-shadow: none;
+}
+
+.form-check-label.cs-label {
+    color: #153060;
+    padding: 0 0 0 6px;
+}
+
+.nav-btn.submit-btn {
+    padding: 10px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.page.p4 {
+    background-color: #828282;
+}
+
+/* forget password */
+.primary-para {
+    color: #828282;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.f-open {
+    font-family: "Open Sans", sans-serif;
+}
+
+.relative {
+    position: relative;
+}
+
+.eye-icon i {
+    position: absolute;
+    top: 14px;
+    right: 11px;
+    color: #863c21;
+    height: 4rem;
+}
+
+.field-wrap .otp {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #f2451c;
+    color: #863c21;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.field-wrap .otp:focus-visible {
+    outline: 1px solid #863c21;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.timer {
+    font-size: 16px;
+    margin: 24px 0;
+}
+
+.mt-26 {
+    margin-top: 26px;
+}
+
+.mb-26 {
+    margin-bottom: 26px;
+}
+
+.mb-32 {
+    margin-bottom: 32px;
+}
+
+.pb-10 {
+    padding-bottom: 10px;
+}
+
+.text-orange {
+    color: #f2451c;
+}
+
+.text-14 {
+    font-size: 14px;
+}
+
+.f-500 {
+    font-weight: 500;
+}
+
+.resend-btn:hover {
+    color: #863c21;
+}
+
+/* success */
+.check-icon-wrap {
+    border-radius: 100%;
+    border: 7px solid #863c2185;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 32px auto;
+}
+
+.check-icon-wrap i {
+    color: #863c21;
+    font-size: 50px;
+}
+
+.text-md {
+    font-size: 45px;
+    color: #3b3b3b;
+    margin-bottom: 32px;
+}
+
+.uppercase {
+    text-transform: uppercase !important;
+}
+
+.verification-area.register {
+    overflow: auto;
+    height: 554px;
+}
+
+.login-btn:hover {
+    color: #863c21;
+}
+
+.form-select:focus {
+    border-color: #828282;
+    box-shadow: none !important;
+}
+
+.cs-label.remember {
+    color: #863c21;
+}
+
+/* success */
+/* subscription */
+.subscription-wrap {
+    border: 1px solid #828282;
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 355px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px auto;
+}
+
+.Secondary-hd {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 56px;
+    color: #2e2e2e;
+}
+
+.subs-list li {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #011032;
+    margin-bottom: 20px;
+}
+
+.subs-list span i {
+    color: #fff;
+    font-size: 10px;
+}
+
+.subs-list span {
+    background-color: #863c21;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.forgot-text:hover {
+    color: #153060;
+}
+
+.register .primary-para {
+    color: #863c21;
+}
+
+@media (max-width: 767px) {
+    .contact-book-wrapper::after {
+        width: 96% !important;
+    }
+
+    .text-wrapper {
+        flex-direction: column;
+    }
+
+    .main-shelf .stand {
+        width: 100% !important;
+        left: 50% !important;
+    }
+
+    .book-area {
+        margin-top: 0;
+    }
+}
+
+/* subscription end */
+/* verification css end*/
+
+.sm-image {
+    width: 100% !important;
+    max-width: 2rem !important;
+    position: absolute !important;
+    right: 18% !important;
+    top: 8% !important;
+}
+
+.bible-book-area .sm-image {
+    right: 50% !important;
+    transform: translate(50%, -100%);
+    top: 0 !important;
+    max-width: 80px !important;
+}
+
+.bible-book-area .sm-image img {
+    width: 100% !important;
+}
+
+.book-inner-wrap {
+    padding: 25px !important;
+}
+.book-inner-wrap h3,
+.book-inner-wrap h6 {
+    margin: 15px 0 0 0;
+}
+.book-first-page-para {
+    text-align: justify;
+    letter-spacing: -0.5px;
+    margin: 0px 25px 25px 25px;
+    font-size: 13px;
+
+}
+
+/* search filter page */
+.form-heading {
+    font-size: 3rem !important;
+    font-weight: bold !important;
+    color: #863c21 !important;
+    text-align: start !important;
+    -webkit-text-fill-color: #863c21 !important;
+    font-family: "Open Sans", sans-serif;
+}
+.left-side-filter-content {
+    padding: 70px;
+    height: 100%;
+}
+.position-relative {
+    position: relative!important;
+}
+.filter-content-wrapper .input-field {
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: justify;
+    text-align: start;
+    border: none !important;
+}
+.btn.form-button1 {
+    background: var(--text-white);
+    color: var(--btn-bg);
+    padding: 5px 0px;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    margin-left: 3px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 34px;
+    border: 3px solid var(--btn-bg) !important;
+    transition: 0.3s;
+    width: 100%;
+}
+.btn.form-button1:hover {
+    background: var(--btn-bg);
+    color: var(--text-white) !important;
+}
+.filter-form-buttons {
+    gap: 10px;
+}
+.filter-cross-button,
+.search-button {
+    top: -62px;
+    left: 36%;
+    visibility: visible;
+    border-radius: 100%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: absolute;
+    color: var(--btn-bg);
+    border: 3px solid var(--btn-bg) !important;
+}
+.filter-cross-button {
+    left: 31%;
+}
+.text-style{
+    font-weight: bold;
+    text-decoration: underline;
+}
+/* search filter page  end*/
